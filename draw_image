@@ -1,0 +1,28 @@
+reset
+unset key
+unset xtics
+unset ytics
+unset ztics
+#pick the red color hex string out
+red(colorstring)= colorstring[1:2]
+#pick the green color hex string out
+green(colorstring)=colorstring[3:4]
+#pick the blue color hex string out
+blue(colorstring)=colorstring[5:6]
+#convert a hex string to its dec format
+hex2dec(hex)=gprintf("%0.f",int('0X'.hex))
+#calculate the rgb value from the r,g,b weight
+rgb(r,g,b) = 65536*int(r)+256*int(g)+int(b)
+#convert the hex color string to its rgb value.
+hex2rgbvalue(color)=rgb(\
+                        hex2dec(red(color)),\
+                        hex2dec(green(color)),\
+                        hex2dec(blue(color))\
+                        ) 
+
+set term png
+set terminal png size 1000, 1100
+set title image_name
+set output image_filename
+plot coord_filename u 1:2:(hex2rgbvalue(stringcolumn(3))) w lines lc rgb variable notitle
+set output
