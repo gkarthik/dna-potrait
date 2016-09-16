@@ -28,7 +28,7 @@ I picked up the color scheme from Adobe Color - https://color.adobe.com/Madrid--
 # Usage
 
 ```
-./draw_potrait.sh <path to fasta sequence file> <Path to final image>.png
+./draw_potrait.sh <path to fasta sequence file>
 ```
 
 By default I've assumed this folder structure, 
