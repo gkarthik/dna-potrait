@@ -25,6 +25,18 @@ Instead of the HSV color scheme used in the paper, that generates a rainbow colo
 
 I picked up the color scheme from Adobe Color - https://color.adobe.com/Madrid---Carabanchel-color-theme-8586545/
 
+#Dependencies
+
+* [gcc](https://gcc.gnu.org/)
+* [gnuplot](http://www.gnuplot.info/)
+
+#Compile
+
+```
+cd dna-potrait/
+gcc -g -o dna_potrait dna_potraint.c
+```
+
 # Usage
 
 ```
